@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Dhanu - Modern Splash (Design B)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b1220;}
+    .splash{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff}
+    .splash img{max-width:60%;max-height:60%;filter:drop-shadow(0 8px 30px rgba(0,150,255,0.3));}
+    .main{display:none;padding:20px;color:#000;background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);position:relative;border-radius:12px;margin:40px;}
+    .chat{height:420px;overflow:auto;background:rgba(255,255,255,0.02);padding:12px;border-radius:8px}
+    .controls{margin-top:12px;display:flex;gap:8px}
+    button{padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="splash" id="splash">
+    <img src="assets/AI-OpenAI-open-source.jpg" alt="Dhanu splash" />
+    <div style="margin-top:16px">Dhanu — starting...</div>
+  </div>
+
+  <div class="main" id="main">
+    <h2>Dhanu</h2>
+    <div class="chat" id="chat">Welcome — Design B prototype. Language auto-detect ready.</div>
+    <div class="controls">
+      <button id="mic">Mic</button>
+      <button id="tasks">Quick Tasks</button>
+      <button id="settings">Settings</button>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(()=>{ 
+      document.getElementById('splash').style.display='none'; 
+      document.getElementById('main').style.display='block'; 
+    }, 2200);
+    document.getElementById('mic').addEventListener('click', ()=> {
+      const c = document.getElementById('chat');
+      c.innerHTML += '<div><em>Mic toggled (prototype).</em></div>';
+      c.scrollTop = c.scrollHeight;
+    });
+  </script>
+</body>
+</html>

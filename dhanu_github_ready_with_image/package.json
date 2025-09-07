@@ -1,0 +1,41 @@
+{
+  "name": "dhanu",
+  "version": "1.0.0",
+  "description": "Dhanu - local AI assistant (Design B)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-packager . Dhanu --platform=win32 --arch=x64 --out=dist --overwrite",
+    "build:win": "electron-builder --windows nsis --x64"
+  },
+  "author": "Nine",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-packager": "^17.1.0",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.nine.dhanu",
+    "productName": "Dhanu",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": false,
+      "perUser": true,
+      "createDesktopShortcut": "true",
+      "createStartMenuShortcut": "true"
+    }
+  }
+}
